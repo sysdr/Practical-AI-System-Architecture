@@ -1,0 +1,270 @@
+{
+  "total_requests": 43,
+  "openai_requests": 21,
+  "anthropic_requests": 22,
+  "total_latency_ms": 7013.724459410405,
+  "openai_latency_ms": 3140.852210378654,
+  "anthropic_latency_ms": 3872.8722490317496,
+  "errors": 9,
+  "last_request_time": "2026-01-21T07:31:58.889685",
+  "requests": [
+    {
+      "provider": "openai",
+      "latency_ms": 150.5,
+      "success": true,
+      "timestamp": "2026-01-21T07:10:46.565872"
+    },
+    {
+      "provider": "openai",
+      "latency_ms": 120.5,
+      "success": true,
+      "timestamp": "2026-01-21T07:12:16.714440"
+    },
+    {
+      "provider": "openai",
+      "latency_ms": 135.2,
+      "success": true,
+      "timestamp": "2026-01-21T07:12:16.815033"
+    },
+    {
+      "provider": "openai",
+      "latency_ms": 98.7,
+      "success": true,
+      "timestamp": "2026-01-21T07:12:16.915778"
+    },
+    {
+      "provider": "openai",
+      "latency_ms": 0,
+      "success": false,
+      "timestamp": "2026-01-21T07:12:17.016438"
+    },
+    {
+      "provider": "anthropic",
+      "latency_ms": 180.3,
+      "success": true,
+      "timestamp": "2026-01-21T07:12:17.117275"
+    },
+    {
+      "provider": "anthropic",
+      "latency_ms": 165.8,
+      "success": true,
+      "timestamp": "2026-01-21T07:12:17.218131"
+    },
+    {
+      "provider": "anthropic",
+      "latency_ms": 195.4,
+      "success": true,
+      "timestamp": "2026-01-21T07:12:17.319140"
+    },
+    {
+      "provider": "anthropic",
+      "latency_ms": 172.1,
+      "success": true,
+      "timestamp": "2026-01-21T07:12:17.420053"
+    },
+    {
+      "provider": "openai",
+      "latency_ms": 120.5,
+      "success": true,
+      "timestamp": "2026-01-21T07:15:16.923130"
+    },
+    {
+      "provider": "openai",
+      "latency_ms": 135.2,
+      "success": true,
+      "timestamp": "2026-01-21T07:15:17.023793"
+    },
+    {
+      "provider": "openai",
+      "latency_ms": 98.7,
+      "success": true,
+      "timestamp": "2026-01-21T07:15:17.124566"
+    },
+    {
+      "provider": "openai",
+      "latency_ms": 0,
+      "success": false,
+      "timestamp": "2026-01-21T07:15:17.225149"
+    },
+    {
+      "provider": "anthropic",
+      "latency_ms": 180.3,
+      "success": true,
+      "timestamp": "2026-01-21T07:15:17.326001"
+    },
+    {
+      "provider": "anthropic",
+      "latency_ms": 165.8,
+      "success": true,
+      "timestamp": "2026-01-21T07:15:17.426687"
+    },
+    {
+      "provider": "anthropic",
+      "latency_ms": 195.4,
+      "success": true,
+      "timestamp": "2026-01-21T07:15:17.527334"
+    },
+    {
+      "provider": "anthropic",
+      "latency_ms": 172.1,
+      "success": true,
+      "timestamp": "2026-01-21T07:15:17.627937"
+    },
+    {
+      "provider": "openai",
+      "latency_ms": 110.5,
+      "success": true,
+      "timestamp": "2026-01-21T07:15:57.989758"
+    },
+    {
+      "provider": "anthropic",
+      "latency_ms": 190.2,
+      "success": true,
+      "timestamp": "2026-01-21T07:15:57.990059"
+    },
+    {
+      "provider": "openai",
+      "latency_ms": 168.8660972188644,
+      "success": true,
+      "timestamp": "2026-01-21T07:30:03.392358"
+    },
+    {
+      "provider": "anthropic",
+      "latency_ms": 230.9168581922957,
+      "success": true,
+      "timestamp": "2026-01-21T07:30:08.394880"
+    },
+    {
+      "provider": "openai",
+      "latency_ms": 196.26972558557787,
+      "success": false,
+      "timestamp": "2026-01-21T07:30:13.396746"
+    },
+    {
+      "provider": "openai",
+      "latency_ms": 227.81400961016988,
+      "success": true,
+      "timestamp": "2026-01-21T07:30:18.397699"
+    },
+    {
+      "provider": "openai",
+      "latency_ms": 229.9216835694069,
+      "success": true,
+      "timestamp": "2026-01-21T07:30:23.398603"
+    },
+    {
+      "provider": "anthropic",
+      "latency_ms": 212.90974642055335,
+      "success": false,
+      "timestamp": "2026-01-21T07:30:28.399868"
+    },
+    {
+      "provider": "anthropic",
+      "latency_ms": 209.96800029202367,
+      "success": true,
+      "timestamp": "2026-01-21T07:30:33.555475"
+    },
+    {
+      "provider": "openai",
+      "latency_ms": 108.59677182648517,
+      "success": true,
+      "timestamp": "2026-01-21T07:30:38.556776"
+    },
+    {
+      "provider": "openai",
+      "latency_ms": 223.00385327913025,
+      "success": false,
+      "timestamp": "2026-01-21T07:30:43.557397"
+    },
+    {
+      "provider": "anthropic",
+      "latency_ms": 128.42577415188137,
+      "success": true,
+      "timestamp": "2026-01-21T07:30:48.559411"
+    },
+    {
+      "provider": "anthropic",
+      "latency_ms": 163.9597081985297,
+      "success": true,
+      "timestamp": "2026-01-21T07:30:53.560502"
+    },
+    {
+      "provider": "anthropic",
+      "latency_ms": 182.61866214180907,
+      "success": false,
+      "timestamp": "2026-01-21T07:30:58.562108"
+    },
+    {
+      "provider": "anthropic",
+      "latency_ms": 151.26146044110095,
+      "success": true,
+      "timestamp": "2026-01-21T07:31:03.724986"
+    },
+    {
+      "provider": "anthropic",
+      "latency_ms": 111.43368271469049,
+      "success": false,
+      "timestamp": "2026-01-21T07:31:08.726222"
+    },
+    {
+      "provider": "openai",
+      "latency_ms": 237.68185208157522,
+      "success": false,
+      "timestamp": "2026-01-21T07:31:13.727034"
+    },
+    {
+      "provider": "anthropic",
+      "latency_ms": 210.8431937315919,
+      "success": true,
+      "timestamp": "2026-01-21T07:31:18.728063"
+    },
+    {
+      "provider": "anthropic",
+      "latency_ms": 91.10367747426503,
+      "success": true,
+      "timestamp": "2026-01-21T07:31:23.730078"
+    },
+    {
+      "provider": "openai",
+      "latency_ms": 235.39725203367342,
+      "success": true,
+      "timestamp": "2026-01-21T07:31:28.731765"
+    },
+    {
+      "provider": "anthropic",
+      "latency_ms": 148.339864281809,
+      "success": true,
+      "timestamp": "2026-01-21T07:31:33.882591"
+    },
+    {
+      "provider": "anthropic",
+      "latency_ms": 241.11407751566074,
+      "success": false,
+      "timestamp": "2026-01-21T07:31:38.884292"
+    },
+    {
+      "provider": "openai",
+      "latency_ms": 102.92381823880018,
+      "success": true,
+      "timestamp": "2026-01-21T07:31:43.885728"
+    },
+    {
+      "provider": "anthropic",
+      "latency_ms": 172.57754347553853,
+      "success": true,
+      "timestamp": "2026-01-21T07:31:48.886812"
+    },
+    {
+      "provider": "openai",
+      "latency_ms": 244.41733737148277,
+      "success": true,
+      "timestamp": "2026-01-21T07:31:53.888416"
+    },
+    {
+      "provider": "openai",
+      "latency_ms": 196.15980956348812,
+      "success": true,
+      "timestamp": "2026-01-21T07:31:58.889706"
+    }
+  ]
+}
