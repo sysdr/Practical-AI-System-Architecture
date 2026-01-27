@@ -1,0 +1,6 @@
+openai
+pydantic
+flask
+flask-cors
+requests
+pytest
