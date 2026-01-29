@@ -1,0 +1,43 @@
+# Bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.pytest_cache/
+*.pytest_cache
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Node (if any)
+node_modules/
+
+# Runtime and logs
+*.log
+*.pid
+metrics.json
+
+# Secrets - do not commit API keys
+.env
+.env.*
+*.pem
+
+# IDE and OS
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Istio
+istio/
+istio-*/
+*.istio.yaml
+*.istio.yml
+*.istio
+
+# Docker
+.docker/
