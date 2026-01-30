@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Document Loader Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #fff;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, #00d4ff, #7b2cbf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .metric-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+        .metric-card h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin-bottom: 10px;
+        }
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #00d4ff;
+        }
+        .metric-unit {
+            font-size: 0.9rem;
+            color: #888;
+            margin-left: 5px;
+        }
+        .success-rate {
+            color: #00ff88;
+        }
+        .error-count {
+            color: #ff4757;
+        }
+        .chart-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .chart-section h2 {
+            margin-bottom: 20px;
+            color: #00d4ff;
+        }
+        .bar-chart {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 200px;
+            padding: 20px;
+        }
+        .bar-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100px;
+        }
+        .bar {
+            width: 60px;
+            background: linear-gradient(180deg, #00d4ff, #7b2cbf);
+            border-radius: 5px 5px 0 0;
+            transition: height 0.5s ease;
+            min-height: 5px;
+        }
+        .bar-label {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+        .bar-value {
+            margin-top: 5px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .controls {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .btn {
+            padding: 15px 30px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        .btn-primary {
+            background: linear-gradient(90deg, #00d4ff, #7b2cbf);
+            color: #fff;
+        }
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+        }
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .status-bar {
+            text-align: center;
+            padding: 15px;
+            background: rgba(0, 255, 136, 0.1);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 255, 136, 0.3);
+        }
+        .status-bar.error {
+            background: rgba(255, 71, 87, 0.1);
+            border-color: rgba(255, 71, 87, 0.3);
+        }
+        .status-bar.loading {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+        .last-update {
+            text-align: center;
+            color: #888;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #00d4ff;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .timing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .timing-item {
+            text-align: center;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        .timing-item .label {
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 5px;
+        }
+        .timing-item .value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00d4ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>RAG Document Loader Dashboard</h1>
+        
+        <div id="status-bar" class="status-bar">
+            Ready to run document loader demo
+        </div>
+        
+        <div class="controls">
+            <button id="run-demo-btn" class="btn btn-primary" onclick="runDemo()">
+                Run Document Loader Demo
+            </button>
+            <button class="btn btn-secondary" onclick="refreshMetrics()">
+                Refresh Metrics
+            </button>
+        </div>
+        
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <h3>Total Documents Loaded</h3>
+                <span id="total-docs" class="metric-value">0</span>
+            </div>
+            <div class="metric-card">
+                <h3>Text Documents</h3>
+                <span id="text-docs" class="metric-value">0</span>
+            </div>
+            <div class="metric-card">
+                <h3>PDF Documents</h3>
+                <span id="pdf-docs" class="metric-value">0</span>
+            </div>
+            <div class="metric-card">
+                <h3>Web Documents</h3>
+                <span id="web-docs" class="metric-value">0</span>
+            </div>
+            <div class="metric-card">
+                <h3>Characters Processed</h3>
+                <span id="total-chars" class="metric-value">0</span>
+            </div>
+            <div class="metric-card">
+                <h3>Success Rate</h3>
+                <span id="success-rate" class="metric-value success-rate">0</span>
+                <span class="metric-unit">%</span>
+            </div>
+            <div class="metric-card">
+                <h3>Total Load Time</h3>
+                <span id="total-time" class="metric-value">0</span>
+                <span class="metric-unit">ms</span>
+            </div>
+            <div class="metric-card">
+                <h3>Errors</h3>
+                <span id="errors" class="metric-value error-count">0</span>
+            </div>
+        </div>
+        
+        <div class="chart-section">
+            <h2>Documents by Type</h2>
+            <div class="bar-chart">
+                <div class="bar-container">
+                    <div id="bar-text" class="bar" style="height: 0px;"></div>
+                    <span class="bar-label">Text</span>
+                    <span id="bar-text-value" class="bar-value">0</span>
+                </div>
+                <div class="bar-container">
+                    <div id="bar-pdf" class="bar" style="height: 0px;"></div>
+                    <span class="bar-label">PDF</span>
+                    <span id="bar-pdf-value" class="bar-value">0</span>
+                </div>
+                <div class="bar-container">
+                    <div id="bar-web" class="bar" style="height: 0px;"></div>
+                    <span class="bar-label">Web</span>
+                    <span id="bar-web-value" class="bar-value">0</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chart-section">
+            <h2>Load Times by Document Type</h2>
+            <div class="timing-grid">
+                <div class="timing-item">
+                    <div class="label">Text Files</div>
+                    <div id="time-text" class="value">0 ms</div>
+                </div>
+                <div class="timing-item">
+                    <div class="label">PDF Files</div>
+                    <div id="time-pdf" class="value">0 ms</div>
+                </div>
+                <div class="timing-item">
+                    <div class="label">Web Pages</div>
+                    <div id="time-web" class="value">0 ms</div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="last-update" class="last-update">
+            Last updated: Never
+        </div>
+    </div>
+
+    <script>
+        function updateMetrics(metrics) {
+            document.getElementById('total-docs').textContent = metrics.total_documents_loaded || 0;
+            document.getElementById('text-docs').textContent = metrics.text_documents_loaded || 0;
+            document.getElementById('pdf-docs').textContent = metrics.pdf_documents_loaded || 0;
+            document.getElementById('web-docs').textContent = metrics.web_documents_loaded || 0;
+            document.getElementById('total-chars').textContent = (metrics.total_characters_processed || 0).toLocaleString();
+            document.getElementById('success-rate').textContent = metrics.success_rate || 0;
+            document.getElementById('total-time').textContent = metrics.total_load_time_ms || 0;
+            document.getElementById('errors').textContent = metrics.errors || 0;
+            
+            // Update timing
+            document.getElementById('time-text').textContent = (metrics.load_time_text_ms || 0) + ' ms';
+            document.getElementById('time-pdf').textContent = (metrics.load_time_pdf_ms || 0) + ' ms';
+            document.getElementById('time-web').textContent = (metrics.load_time_web_ms || 0) + ' ms';
+            
+            // Update bar chart
+            const maxDocs = Math.max(
+                metrics.text_documents_loaded || 0,
+                metrics.pdf_documents_loaded || 0,
+                metrics.web_documents_loaded || 0,
+                1
+            );
+            const maxHeight = 150;
+            
+            const textHeight = ((metrics.text_documents_loaded || 0) / maxDocs) * maxHeight;
+            const pdfHeight = ((metrics.pdf_documents_loaded || 0) / maxDocs) * maxHeight;
+            const webHeight = ((metrics.web_documents_loaded || 0) / maxDocs) * maxHeight;
+            
+            document.getElementById('bar-text').style.height = Math.max(textHeight, 5) + 'px';
+            document.getElementById('bar-pdf').style.height = Math.max(pdfHeight, 5) + 'px';
+            document.getElementById('bar-web').style.height = Math.max(webHeight, 5) + 'px';
+            
+            document.getElementById('bar-text-value').textContent = metrics.text_documents_loaded || 0;
+            document.getElementById('bar-pdf-value').textContent = metrics.pdf_documents_loaded || 0;
+            document.getElementById('bar-web-value').textContent = metrics.web_documents_loaded || 0;
+            
+            // Update last update time
+            if (metrics.last_update) {
+                document.getElementById('last-update').textContent = 'Last updated: ' + new Date(metrics.last_update).toLocaleString();
+            }
+        }
+        
+        async function refreshMetrics() {
+            try {
+                const response = await fetch('/api/metrics');
+                const metrics = await response.json();
+                updateMetrics(metrics);
+            } catch (error) {
+                console.error('Failed to refresh metrics:', error);
+            }
+        }
+        
+        async function runDemo() {
+            const btn = document.getElementById('run-demo-btn');
+            const statusBar = document.getElementById('status-bar');
+            
+            btn.disabled = true;
+            btn.innerHTML = '<span class="loading-spinner"></span>Running Demo...';
+            statusBar.className = 'status-bar loading';
+            statusBar.textContent = 'Running document loader demo... Please wait.';
+            
+            try {
+                const response = await fetch('/api/run-demo', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'}
+                });
+                const result = await response.json();
+                
+                if (result.success) {
+                    statusBar.className = 'status-bar';
+                    statusBar.textContent = 'Demo completed successfully! Metrics updated.';
+                    updateMetrics(result.metrics);
+                } else {
+                    statusBar.className = 'status-bar error';
+                    statusBar.textContent = 'Demo failed: ' + (result.error || 'Unknown error');
+                }
+            } catch (error) {
+                statusBar.className = 'status-bar error';
+                statusBar.textContent = 'Error running demo: ' + error.message;
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = 'Run Document Loader Demo';
+            }
+        }
+        
+        // Initial load
+        refreshMetrics();
+        
+        // Auto-refresh every 10 seconds
+        setInterval(refreshMetrics, 10000);
+    </script>
+</body>
+</html>

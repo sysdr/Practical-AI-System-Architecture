@@ -1,0 +1,1 @@
+This is a plain text document. It contains some basic information for our RAG system. We're testing how to load simple text files. This content will be used to demonstrate the functionality of a document loader for plain text. It's concise yet descriptive enough to verify content extraction.
