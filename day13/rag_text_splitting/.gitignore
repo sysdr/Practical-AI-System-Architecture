@@ -1,0 +1,88 @@
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Environment variables / Secrets
+.env
+.env.*
+*.env
+.envrc
+
+# API Keys - Never commit these
+*api_key*
+*API_KEY*
+*secret*
+*SECRET*
+credentials.json
+secrets.json
+
+# Data files (can be regenerated)
+data/
+*.pdf
+*.csv
+*.xlsx
+
+# Logs
+*.log
+logs/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Docker
+.docker/
+
+# Istio
+istio*/
+*istio*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Test artifacts
+.coverage
+coverage.xml
+*.cover
+.hypothesis/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# mypy
+.mypy_cache/
