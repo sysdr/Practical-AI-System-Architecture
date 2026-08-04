@@ -1,4 +1,0 @@
-ollama
-flask
-flask-cors
-pytest

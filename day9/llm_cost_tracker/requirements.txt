@@ -1,5 +1,0 @@
-tiktoken
-flask
-flask-cors
-requests
-pytest

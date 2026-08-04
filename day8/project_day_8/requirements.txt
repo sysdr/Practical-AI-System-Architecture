@@ -1,8 +1,0 @@
-pydantic==2.*
-httpx
-python-dotenv
-litellm
-flask
-flask-cors
-requests
-pytest

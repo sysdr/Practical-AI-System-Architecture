@@ -1,5 +1,0 @@
-openai
-flask
-flask-cors
-requests
-pytest

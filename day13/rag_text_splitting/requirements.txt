@@ -1,5 +1,0 @@
-langchain-text-splitters
-langchain-community
-pypdf
-requests
-rich
