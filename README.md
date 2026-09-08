@@ -1,54 +1,66 @@
-[Check Course Curricullum](https://systemdrd.com/courses/ai-system-architecture-llm-rag-course/)
+# Practical AI System Architecture: Building Intelligent Systems with LLMs, RAG, and Agent Frameworks
 
-## Why This Course?
+**3 full lessons from this course are free to read — no signup, no card.** This repository holds the working code for those lessons.
 
-The landscape of artificial intelligence is fundamentally shifting. We're moving beyond static generative models to a new frontier: **autonomous, goal-directed agentic systems.** This isn't just an incremental update; it's a paradigm shift, demanding a completely new approach to system design, architecture, and deployment. The focus has moved from scaling compute at *training time* to optimizing sophisticated reasoning and dynamic orchestration at *test time*.
+[![Free lessons](https://img.shields.io/badge/free_lessons-3-16703E?style=flat-square)](https://systemdrd.com/courses/ai-system-architecture-llm-rag-course/?utm_source=github&utm_medium=readme&utm_campaign=practical-ai-system-architecture) [![Course](https://img.shields.io/badge/full_course-30_lessons-D92B21?style=flat-square)](https://systemdrd.com/courses/ai-system-architecture-llm-rag-course/?utm_source=github&utm_medium=readme&utm_campaign=practical-ai-system-architecture) [![Topic](https://img.shields.io/badge/AI_Machine_Learning-informational?style=flat-square)](https://systemdrd.com/courses/ai-system-architecture-llm-rag-course/?utm_source=github&utm_medium=readme&utm_campaign=practical-ai-system-architecture)
 
-Mainstream resources often miss this critical inflection point, offering superficial takes on prompt engineering or basic tool integration. This course cuts through the noise. It's designed for the seasoned engineer and the aspiring architect who understands that building truly intelligent systems requires a deep dive into the underlying infrastructure, the dual-lineage theoretical foundations (symbolic vs. neural), and the practicalities of orchestrating complex, self-improving entities in the real world.
+## Start with the free lessons
 
-We'll explore why merely "retrofitting" old symbolic concepts onto new neural models leads to brittle systems, and how to instead synthesize robust, adaptable, and reliable agentic architectures. This isn't about theoretical musings; it's about equipping you with the architectural mastery to design, build, and govern the next generation of AI systems that will define the coming decade.
+Each lesson is the same one a paying subscriber reads — the full text, not a preview. The code for it is in this repository.
+
+| | Read the lesson | Code in this repo |
+|---|---|---|
+| **Day 1** | [Deconstructing LLMs: Beyond the Hype](https://systemdrd.com/lessons/llm-agents-system-design/?utm_source=github&utm_medium=readme&utm_campaign=practical-ai-system-architecture) | [`day1/`](day1) |
+| **Day 2** | [The Art of the Prompt: Crafting Effective Instructions.](https://systemdrd.com/lessons/prompt-engineering-llm-hands-on/?utm_source=github&utm_medium=readme&utm_campaign=practical-ai-system-architecture) | [`day2/`](day2) |
+| **Day 3** | [Tokenization and Context Windows: The LLM’s Memory Limit.](https://systemdrd.com/lessons/llm-tokenization-context-memory/?utm_source=github&utm_medium=readme&utm_campaign=practical-ai-system-architecture) | [`day3/`](day3) |
+
+## The rest of the course — 30 lessons
+
+<details><summary>Full curriculum (30 lessons)</summary>
+
+- Day 1 : Deconstructing LLMs: Beyond the Hype — **free, above**
+- Day 2 : The Art of the Prompt: Crafting Effective Instructions. — **free, above**
+- Day 3 : Tokenization and Context Windows: The LLM’s Memory Limit. — **free, above**
+- Day 4 : Choosing Your LLM: Models, APIs, and Ecosystems.
+- Day 5 : Structured Output: Guiding LLMs for Predictable Data.
+- Day 6 : Chaining Prompts: Orchestrating Multi-Step Reasoning.
+- Day 7 : Managing Conversation State: The Illusion of Memory.
+- Day 8 : Reliable Output Parsing: When LLMs Don’t Follow Rules.
+- Day 9 : Cost-Aware Design: Managing LLM API Expenses.
+- Day 10 : Introduction to LLM Frameworks: LangChain & LlamaIndex.
+- Day 11 : The RAG Imperative: Why LLMs Need External Knowledge.
+- Day 12 : Document Loaders: Bringing Your Data to Life.
+- Day 13 : Text Splitting Strategies: Preparing Data for Embeddings.
+- Day 14 : Embeddings: The Language of Semantic Search.
+- Day 15 Vector Databases: Storing and Retrieving Semantic Context.
+- Day 16 Retrieval Strategies: Finding the Right Needle in the Haystack
+- Day 17 Multi-Query and HyDE RAG: Enhancing Retrieval Precision and Recall
+- Day 18 RAG Evaluation and Metrics: Quantifying Retrieval Performance for Production
+- Day 19 Agentic Principles: Reasoning, Planning, and Self-Correction in Action
+- Day 20 Tool Use and Function Calling: Extending Agent Capabilities Beyond Language
+- Day 21 Integrating External APIs: Real-World Agent Actions and Orchestration
+- Day 22 Agent Memory Systems: Short-Term, Long-Term, and Semantic Recall for Autonomy
+- Day 23 Human-in-the-Loop & Moderation: Ensuring Control and Safety in Agentic Systems
+- Day 24 Orchestrating Multi-Agent Systems: Hierarchical and Collaborative Patterns
+- Day 25 Building Collaborative Agents with LangGraph/AutoGen: Practical Frameworks
+- Day 26 Agentic Workflows: Designing Complex Multi-Step and Adaptive Tasks
+- Day 27 Scaling Agentic Workloads: Inference Optimization and Distributed Systems Design
+- Day 28 Observability and Monitoring for Agents: Tracing, Logging, and Performance Metrics
+- Day 29 Security, Trust, and Ethical AI: Guardrails and Governance Layers in Practice
+- Day 30 Designing for Autonomous Evolution: Self-Improvement and Adaptive Agents for the Future
+
+</details>
+
+## Get the whole course
+
+**$299 one-off.** No subscription.
+
+- All 30 lessons, written to the same depth as the 3 free ones above
+- The complete source repository, one commit per lesson, beyond the 3 lessons here
+- Every later lesson builds on the code in this repo, so nothing is thrown away
+
+### [Read the free lessons first →](https://systemdrd.com/courses/ai-system-architecture-llm-rag-course/?utm_source=github&utm_medium=readme&utm_campaign=practical-ai-system-architecture)
 
 ---
 
-## What You'll Build
-
-This isn't a course where you just listen. You'll architect and code production-ready agentic systems from the ground up. By the end, you'll have a portfolio showcasing:
-
-* **A Self-Correcting Code Generation Agent:** An intelligent assistant that identifies its own coding errors through execution feedback and iterates to produce robust, test-passing solutions.
-* **A Multi-Agent Orchestration Framework:** Design and implement a system for a complex task (e.g., a meal planner, a research assistant) where specialized agents collaborate, delegate, and communicate to achieve a common goal.
-* **An Agentic Retrieval-Augmented Generation (RAG) System:** A sophisticated agent capable of dynamically routing queries, retrieving information from multiple knowledge sources, and synthesizing comprehensive, context-aware responses, complete with long-term memory.
-* **A Decentralized Web Automation Agent:** An autonomous "Deep Research Assistant" that can navigate, extract, and synthesize information across distributed web systems, executing complex workflows without human intervention.
-* **Robust Guardrails and Governance Layers:** Integrate advanced security measures, ethical considerations, and human-in-the-loop protocols into your agentic systems to ensure safety, compliance, and responsible deployment.
-* **Specialized Agentic Prototypes:** Depending on your interest, you'll tackle projects like an AI scientist for automated discovery, an autonomous software engineer for GitHub issue resolution, or an agentic finance model for data extraction and backtesting.
-
----
-
-## Who Should Take This Course?
-
-This course is meticulously crafted for professionals who are ready to lead the charge in agentic AI, moving beyond foundational knowledge to architectural mastery.
-
-* **Software Engineers &amp; Developers:** Elevate your skills from building applications *with* AI to architecting autonomous systems *powered by* AI. Learn to write robust, agent-aware code.
-* **System Programmers &amp; Engineers:** Understand the deep systems infrastructure required to scale, serve, and manage agentic workloads, from distributed compute to memory optimization.
-* **Software Designers &amp; Architects:** Gain the critical insights to design resilient, scalable, and secure multi-agent systems, making informed trade-offs that impact performance, cost, and safety.
-* **Data Engineers:** Learn how to integrate complex data pipelines with agentic memory systems (like vector stores) and enable agents to leverage and generate structured data effectively.
-* **SRE &amp; DevOps Engineers:** Master the deployment, monitoring, and operational challenges of agentic systems, including continuous batching, efficient inference, and proactive guardrails.
-* **Product Managers:** Develop a nuanced understanding of agent capabilities, limitations, and the critical design decisions needed to build impactful, ethical, and commercially viable agentic products.
-* **Engineering Managers:** Acquire the technical depth to lead teams building agentic AI, understand project complexities, and foster innovation while managing risk.
-* **IT Service Industry Consultants &amp; Engineers:** Position yourself as a leading expert in agentic AI, capable of guiding organizations through strategic adoption, architectural planning, and secure deployment.
-* **Fresh Computer Science &amp; Engineering Grads:** If you possess a strong foundation and an insatiable drive, this course will fast-track your career, equipping you with skills that are currently in high demand at the forefront of AI.
-
----
-
-## What Makes This Course Different?
-
-This isn't another surface-level tutorial. This course delivers the kind of hard-earned wisdom and practical, non-obvious insights you typically only gain after years at the bleeding edge of big tech.
-
-1. **Big Tech System Design DNA:** We go beyond conceptual frameworks, diving into the architectural decisions, trade-offs, and operational realities of building ultra-high-scale, agentic systems. We'll uncover why certain patterns succeed and others fail under extreme load, drawing directly from experience architecting systems handling 100 million requests per second.
-2. **The Dual-Lineage Framework &amp; Beyond:** We don't just teach "how to prompt." We dissect the fundamental theoretical underpinnings of agentic AI, contrasting symbolic and neural paradigms, and showing you how to intelligently synthesize them for systems that are both reliable and adaptable. You'll learn to avoid the "conceptual retrofitting" pitfalls that plague many current approaches.
-3. **Test-Time Compute Revolution:** This course is built on the understanding that the most significant transformation in LLM development is the shift to test-time compute. We'll explore models like OpenAI's o1 and DeepSeek-R1, and you'll get hands-on with optimizing inference for complex reasoning, a critical skill for future agentic systems.
-4. **Elite Institutional Synthesis:** Our curriculum is meticulously synthesized from the rigorous standards and research priorities of MIT, Stanford, Harvard, and Columbia, providing a unique blend of deep theoretical foundations, advanced systems engineering, and ethical governance.
-5. **Production-Ready, Not Just Prototypes:** Every lesson emphasizes practical, deployable solutions. We'll integrate real-world security, guardrails, and governance from day one, preparing you to build agents that are robust, compliant, and safe for enterprise and public deployment.
-6. **Uncommon Insights into Orchestration:** You'll gain a deep understanding of advanced multi-agent patterns – hierarchical, orchestrator-worker, mesh, and joint collaborative – learning *when* and *why* to apply each, complete with hands-on implementation in frameworks like LangGraph and AutoGen.
-7. **Hands-On, Code-First Mastery:** This course is intensely practical. You'll be coding, designing, and debugging every step of the way, building a portfolio of sophisticated agentic systems that demonstrate true mastery.
-
----
+Part of [SystemDR](https://systemdrd.com/courses/?utm_source=github&utm_medium=readme&utm_campaign=practical-ai-system-architecture) — hands-on engineering courses where you build the system, break it, and fix it. [All courses](https://systemdrd.com/courses/?utm_source=github&utm_medium=readme&utm_campaign=practical-ai-system-architecture) · [Free lessons across every course](https://systemdrd.com/trial-lessons/?utm_source=github&utm_medium=readme&utm_campaign=practical-ai-system-architecture)
